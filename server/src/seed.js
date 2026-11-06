@@ -11,12 +11,12 @@ const MockTest = require('./models/MockTest');
 const DailyChallenge = require('./models/DailyChallenge');
 const TestAttempt = require('./models/TestAttempt');
 
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/aptitude_pro';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://chris123:chriswin123@cluster0.kvgihmd.mongodb.net/aptitude_pro?retryWrites=true&w=majority';
 
 async function seedDatabase() {
   try {
     await mongoose.connect(MONGO_URI);
-    console.log('Connected to MongoDB for seeding...');
+    console.log('Connected to MongoDB Atlas for seeding...');
 
     // Clear existing data
     await Promise.all([

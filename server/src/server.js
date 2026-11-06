@@ -5,7 +5,7 @@ const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/aptitude_pro';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://chris123:chriswin123@cluster0.kvgihmd.mongodb.net/aptitude_pro?retryWrites=true&w=majority';
 
 // Middleware
 app.use(cors({
@@ -17,8 +17,8 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // Database Connection
 mongoose.connect(MONGO_URI)
-  .then(() => console.log('Successfully connected to MongoDB at', MONGO_URI))
-  .catch((err) => console.error('MongoDB connection error:', err));
+  .then(() => console.log('Successfully connected to MongoDB Atlas!'))
+  .catch((err) => console.error('MongoDB Atlas connection error:', err));
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
