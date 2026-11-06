@@ -65,14 +65,14 @@ export default function HomePage() {
   };
 
   const companiesList = [
-    { name: 'TCS', slug: 'tcs', pkg: '3.6 - 9.0 LPA', desc: 'Cognitive & Advanced NQT', logo: 'TCS' },
-    { name: 'Infosys', slug: 'infosys', pkg: '3.6 - 9.5 LPA', desc: 'Mathematical & Logical Puzzles', logo: 'INF' },
-    { name: 'Wipro', slug: 'wipro', pkg: '3.5 - 6.5 LPA', desc: 'Elite NTH Speed Rounds', logo: 'WIP' },
-    { name: 'Accenture', slug: 'accenture', pkg: '4.5 - 6.5 LPA', desc: 'Cognitive & Pseudocode Test', logo: 'ACN' },
-    { name: 'Cognizant', slug: 'cognizant', pkg: '4.0 - 6.75 LPA', desc: 'GenC & Elevate Aptitude', logo: 'CTS' },
-    { name: 'Capgemini', slug: 'capgemini', pkg: '4.0 - 7.5 LPA', desc: 'Game-Based & Essay Rounds', logo: 'CAP' },
-    { name: 'Zoho', slug: 'zoho', pkg: '6.0 - 12.0 LPA', desc: 'Pure Aptitude & Problem Solving', logo: 'ZOH' },
-    { name: 'HCL', slug: 'hcl', pkg: '3.6 - 5.0 LPA', desc: 'First Careers Tech Drive', logo: 'HCL' },
+    { name: 'TCS', slug: 'tcs', pkg: '3.6 - 9.0 LPA', desc: 'Cognitive & Advanced NQT', logo: 'TCS', logoImg: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=160&auto=format&fit=crop&q=80', badge: 'IT Services Leader' },
+    { name: 'Infosys', slug: 'infosys', pkg: '3.6 - 9.5 LPA', desc: 'Mathematical & Logical Puzzles', logo: 'INF', logoImg: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=160&auto=format&fit=crop&q=80', badge: 'Global Innovator' },
+    { name: 'Wipro', slug: 'wipro', pkg: '3.5 - 6.5 LPA', desc: 'Elite NTH Speed Rounds', logo: 'WIP', logoImg: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=160&auto=format&fit=crop&q=80', badge: 'Tech Solutions' },
+    { name: 'Accenture', slug: 'accenture', pkg: '4.5 - 6.5 LPA', desc: 'Cognitive & Pseudocode Test', logo: 'ACN', logoImg: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=160&auto=format&fit=crop&q=80', badge: 'Consulting Giant' },
+    { name: 'Cognizant', slug: 'cognizant', pkg: '4.0 - 6.75 LPA', desc: 'GenC & Elevate Aptitude', logo: 'CTS', logoImg: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=160&auto=format&fit=crop&q=80', badge: 'Digital Engineering' },
+    { name: 'Capgemini', slug: 'capgemini', pkg: '4.0 - 7.5 LPA', desc: 'Game-Based & Essay Rounds', logo: 'CAP', logoImg: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=160&auto=format&fit=crop&q=80', badge: 'Transformation' },
+    { name: 'Zoho', slug: 'zoho', pkg: '6.0 - 12.0 LPA', desc: 'Pure Aptitude & Problem Solving', logo: 'ZOH', logoImg: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=160&auto=format&fit=crop&q=80', badge: 'SaaS Powerhouse' },
+    { name: 'HCL', slug: 'hcl', pkg: '3.6 - 5.0 LPA', desc: 'First Careers Tech Drive', logo: 'HCL', logoImg: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=160&auto=format&fit=crop&q=80', badge: 'Engineering & R&D' },
   ];
 
   return (
@@ -231,14 +231,25 @@ export default function HomePage() {
         {/* 3 Large Category Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           
-          {/* Card 1: Banking Exams (Dark Samsung Card) */}
-          <div className="samsung-card-dark p-8 sm:p-10 flex flex-col justify-between min-h-[460px] relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-blue-600/20 to-transparent rounded-full blur-2xl pointer-events-none"></div>
-
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center mb-6">
-                <Landmark className="w-6 h-6 text-white" />
+          {/* Card 1: Banking Exams (Dark Samsung Card with Photo Header) */}
+          <div className="samsung-card-dark flex flex-col justify-between min-h-[500px] relative overflow-hidden group border border-white/10">
+            {/* Header Image Cover */}
+            <div className="h-44 w-full relative overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=800&auto=format&fit=crop&q=80" 
+                alt="Banking & Finance Exams" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 brightness-90"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/60 to-transparent"></div>
+              <div className="absolute top-4 left-4 w-10 h-10 rounded-2xl bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center">
+                <Landmark className="w-5 h-5 text-white" />
               </div>
+              <span className="absolute bottom-3 left-6 text-[10px] font-mono text-neutral-300 tracking-wider uppercase font-semibold bg-white/10 px-2.5 py-1 rounded-full backdrop-blur-sm">
+                SBI • IBPS • RBI • NABARD
+              </span>
+            </div>
+
+            <div className="p-6 sm:p-8 pt-2">
               <span className="text-[11px] font-mono text-neutral-400 tracking-wider uppercase font-semibold">
                 Nationalized & Central Banks
               </span>
@@ -259,10 +270,10 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="pt-8 mt-auto">
+            <div className="p-6 sm:p-8 pt-0 mt-auto">
               <Link 
                 to="/exams?category=Banking+Exams" 
-                className="inline-flex items-center justify-between w-full p-4 rounded-2xl bg-white text-black font-bold text-xs hover:bg-neutral-100 transition-all"
+                className="inline-flex items-center justify-between w-full p-4 rounded-2xl bg-white text-black font-bold text-xs hover:bg-neutral-100 transition-all shadow-md"
               >
                 <span>Explore Banking Curriculum</span>
                 <ArrowRight className="w-4 h-4" />
@@ -270,12 +281,25 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Card 2: Competitive Exams */}
-          <div className="samsung-card p-8 sm:p-10 flex flex-col justify-between min-h-[460px] bg-white group">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-[#E8ECF5] flex items-center justify-center mb-6">
-                <GraduationCap className="w-6 h-6 text-[#1428A0]" />
+          {/* Card 2: Competitive Exams with Photo Header */}
+          <div className="samsung-card flex flex-col justify-between min-h-[500px] bg-white group overflow-hidden border border-black/10">
+            {/* Header Image Cover */}
+            <div className="h-44 w-full relative overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&auto=format&fit=crop&q=80" 
+                alt="Competitive Exams" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent"></div>
+              <div className="absolute top-4 left-4 w-10 h-10 rounded-2xl bg-white/80 backdrop-blur-md border border-black/10 flex items-center justify-center shadow-sm">
+                <GraduationCap className="w-5 h-5 text-[#1428A0]" />
               </div>
+              <span className="absolute bottom-3 left-6 text-[10px] font-mono text-[#1428A0] tracking-wider uppercase font-bold bg-[#E8ECF5] px-2.5 py-1 rounded-full">
+                SSC • Railways • UPSC CSAT
+              </span>
+            </div>
+
+            <div className="p-6 sm:p-8 pt-2">
               <span className="text-[11px] font-mono text-neutral-400 tracking-wider uppercase font-semibold">
                 Central & State Governance
               </span>
@@ -296,10 +320,10 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="pt-8 mt-auto">
+            <div className="p-6 sm:p-8 pt-0 mt-auto">
               <Link 
                 to="/exams?category=Competitive+Exams" 
-                className="inline-flex items-center justify-between w-full p-4 rounded-2xl bg-black text-white font-bold text-xs hover:bg-neutral-800 transition-all"
+                className="inline-flex items-center justify-between w-full p-4 rounded-2xl bg-black text-white font-bold text-xs hover:bg-neutral-800 transition-all shadow-md"
               >
                 <span>Practice Competitive Exams</span>
                 <ArrowRight className="w-4 h-4" />
@@ -307,12 +331,25 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Card 3: Campus Placement */}
-          <div className="samsung-card p-8 sm:p-10 flex flex-col justify-between min-h-[460px] bg-white group">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-neutral-100 flex items-center justify-center mb-6">
-                <Building2 className="w-6 h-6 text-black" />
+          {/* Card 3: Campus Placement with Photo Header */}
+          <div className="samsung-card flex flex-col justify-between min-h-[500px] bg-white group overflow-hidden border border-black/10">
+            {/* Header Image Cover */}
+            <div className="h-44 w-full relative overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80" 
+                alt="Campus Placement" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent"></div>
+              <div className="absolute top-4 left-4 w-10 h-10 rounded-2xl bg-white/80 backdrop-blur-md border border-black/10 flex items-center justify-center shadow-sm">
+                <Building2 className="w-5 h-5 text-black" />
               </div>
+              <span className="absolute bottom-3 left-6 text-[10px] font-mono text-emerald-700 tracking-wider uppercase font-bold bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+                TCS • Infosys • Wipro • Zoho
+              </span>
+            </div>
+
+            <div className="p-6 sm:p-8 pt-2">
               <span className="text-[11px] font-mono text-neutral-400 tracking-wider uppercase font-semibold">
                 Tier 1 IT & Product Companies
               </span>
@@ -333,10 +370,10 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="pt-8 mt-auto">
+            <div className="p-6 sm:p-8 pt-0 mt-auto">
               <Link 
                 to="/exams?category=Campus+Placement" 
-                className="inline-flex items-center justify-between w-full p-4 rounded-2xl bg-black text-white font-bold text-xs hover:bg-neutral-800 transition-all"
+                className="inline-flex items-center justify-between w-full p-4 rounded-2xl bg-black text-white font-bold text-xs hover:bg-neutral-800 transition-all shadow-md"
               >
                 <span>Crack Placement Drives</span>
                 <ArrowRight className="w-4 h-4" />
@@ -553,20 +590,30 @@ export default function HomePage() {
               <Link
                 key={company.slug}
                 to={`/companies/${company.slug}`}
-                className="samsung-card p-6 bg-[#FAF9F6] border border-black/8 hover:border-black/20 hover:bg-white transition-all flex flex-col justify-between group"
+                className="samsung-card p-5 bg-[#FAF9F6] border border-black/8 hover:border-black/20 hover:bg-white transition-all flex flex-col justify-between group overflow-hidden relative"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-black text-white font-bold text-base flex items-center justify-center font-heading group-hover:bg-[#1428A0] transition-colors">
-                    {company.logo}
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="w-12 h-12 rounded-2xl overflow-hidden border border-black/10 shadow-sm shrink-0">
+                      <img 
+                        src={company.logoImg} 
+                        alt={company.name} 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
+                    <span className="text-[10px] font-mono font-bold text-neutral-500 bg-black/5 px-2 py-0.5 rounded-full">
+                      {company.badge}
+                    </span>
                   </div>
-                  <h3 className="text-lg font-bold text-black mt-4 font-heading">{company.name}</h3>
-                  <p className="text-[11px] text-[#1428A0] font-semibold mt-0.5">{company.pkg}</p>
+
+                  <h3 className="text-base font-bold text-black mt-1 font-heading group-hover:text-[#1428A0] transition-colors">{company.name}</h3>
+                  <p className="text-[11px] text-[#1428A0] font-bold mt-0.5">{company.pkg}</p>
                   <p className="text-xs text-[#757575] mt-2 line-clamp-2 leading-relaxed">
                     {company.desc}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-3 border-t border-black/5 flex items-center justify-between text-xs font-bold text-black">
+                <div className="mt-5 pt-3 border-t border-black/5 flex items-center justify-between text-xs font-bold text-black">
                   <span>View Prep Dossier</span>
                   <ArrowRight className="w-3.5 h-3.5 text-neutral-400 group-hover:text-black group-hover:translate-x-1 transition-all" />
                 </div>

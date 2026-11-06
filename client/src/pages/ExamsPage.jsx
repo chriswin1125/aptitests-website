@@ -254,19 +254,41 @@ export default function ExamsPage() {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {companies.map((comp) => (
-                    <Link
-                      key={comp.slug}
-                      to={`/companies/${comp.slug}`}
-                      className="samsung-card p-6 bg-white border border-black/8 hover:border-black/30 transition-all flex flex-col justify-between group"
-                    >
-                      <div>
-                        <div className="w-12 h-12 rounded-2xl bg-black text-white font-bold text-base flex items-center justify-center font-heading group-hover:bg-[#1428A0] transition-colors mb-4">
-                          {comp.name.slice(0, 3).toUpperCase()}
-                        </div>
+                  {companies.map((comp) => {
+                    const companyPhotos = {
+                      tcs: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=160&auto=format&fit=crop&q=80',
+                      infosys: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=160&auto=format&fit=crop&q=80',
+                      wipro: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=160&auto=format&fit=crop&q=80',
+                      accenture: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=160&auto=format&fit=crop&q=80',
+                      cognizant: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=160&auto=format&fit=crop&q=80',
+                      capgemini: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=160&auto=format&fit=crop&q=80',
+                      zoho: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=160&auto=format&fit=crop&q=80',
+                      hcl: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=160&auto=format&fit=crop&q=80'
+                    };
+                    const photo = companyPhotos[comp.slug] || 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=160&auto=format&fit=crop&q=80';
 
-                        <h3 className="text-lg font-bold text-black font-heading">{comp.name}</h3>
-                        <p className="text-xs font-semibold text-[#1428A0] mt-0.5">Package: {comp.ctcRange}</p>
+                    return (
+                      <Link
+                        key={comp.slug}
+                        to={`/companies/${comp.slug}`}
+                        className="samsung-card p-5 bg-white border border-black/8 hover:border-black/30 transition-all flex flex-col justify-between group overflow-hidden"
+                      >
+                        <div>
+                          <div className="flex items-center justify-between mb-4">
+                            <div className="w-12 h-12 rounded-2xl overflow-hidden border border-black/10 shadow-sm shrink-0">
+                              <img 
+                                src={photo} 
+                                alt={comp.name} 
+                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" 
+                              />
+                            </div>
+                            <span className="text-[10px] font-mono font-bold text-neutral-500 bg-black/5 px-2.5 py-0.5 rounded-full">
+                              Tier-1
+                            </span>
+                          </div>
+
+                          <h3 className="text-base font-bold text-black font-heading group-hover:text-[#1428A0] transition-colors">{comp.name}</h3>
+                          <p className="text-xs font-semibold text-[#1428A0] mt-0.5">Package: {comp.ctcRange}</p>
                         
                         <p className="text-xs text-neutral-600 mt-2 line-clamp-2 leading-relaxed">
                           {comp.overview}
@@ -282,7 +304,8 @@ export default function ExamsPage() {
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </Link>
-                  ))}
+                  );
+                })}
                 </div>
               </div>
             )}
