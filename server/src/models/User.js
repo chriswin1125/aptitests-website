@@ -18,6 +18,8 @@ const userSchema = new mongoose.Schema({
     correctAnswers: { type: Number, default: 0 },
     totalTimeSpentSec: { type: Number, default: 0 },
   },
+  resetOtp: { type: String, default: null },
+  resetOtpExpire: { type: Date, default: null },
   createdAt: { type: Date, default: Date.now }
 });
 

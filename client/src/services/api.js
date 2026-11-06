@@ -25,6 +25,9 @@ api.interceptors.request.use((config) => {
 // Auth endpoints
 export const loginApi = (credentials) => api.post('/auth/login', credentials);
 export const registerApi = (userData) => api.post('/auth/register', userData);
+export const forgotPasswordApi = (email) => api.post('/auth/forgot-password', { email });
+export const verifyOtpApi = (email, otp) => api.post('/auth/verify-otp', { email, otp });
+export const resetPasswordApi = (email, otp, newPassword) => api.post('/auth/reset-password', { email, otp, newPassword });
 export const getMeApi = () => api.get('/auth/me');
 export const updateProfileApi = (profileData) => api.put('/auth/profile', profileData);
 export const toggleBookmarkFormulaApi = (formulaId) => api.post('/auth/bookmark-formula', { formulaId });
