@@ -1,6 +1,11 @@
-# Aptitude Pro – Complete Aptitude Learning & Testing Platform
+﻿# Aptitude Pro – Complete Aptitude Learning & Testing Platform
 
 A premium, modern aptitude preparation platform inspired by the visual design language of **Samsung.com**, built for banking aspirants, competitive examination candidates, and campus placements.
+
+## 🚀 Live Demo
+
+- **Live Web Application**: [https://proapti.vercel.app](https://proapti.vercel.app)
+- **Backend API**: [https://aptitests-website.onrender.com](https://aptitests-website.onrender.com)
 
 ---
 
